@@ -1,5 +1,7 @@
 plugins {
     id 'java-library'
+    id 'org.gradle.java'
+    id 'org.gradle.maven-publish'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -19,5 +21,20 @@ jar {
     manifest {
         attributes('Implementation-Title': project.name,
                 'Implementation-Version': project.version)
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.github.kil1s.OtherArray'
+            artifactId = 'library'
+            version = '0.0.1'
+
+            from components.java
+        }
+    }
+    repositories {
+        mavenLocal()
     }
 }
