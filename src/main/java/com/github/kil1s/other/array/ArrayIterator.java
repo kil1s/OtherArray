@@ -1,4 +1,4 @@
-package com.github.FlorianSteenbuck.other.array;
+package com.github.kil1s.other.array;
 
 import java.util.Iterator;
 
